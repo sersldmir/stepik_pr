@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<questions>
+    <question>
+        <name true="Четыре"> Один, два, три или четыре?</name>
+        <answers>
+        <answer>Один</answer>
+        <answer>Два</answer>
+        <answer>Три</answer>
+        <answer>Четыре</answer>
+        </answers>
+    </question>
+    <question>
+        <name true="Бобы"> Говядина, свинина, курица или бобы?</name>
+        <answers>
+        <answer>Говядина</answer>
+        <answer>Свинина</answer>
+        <answer>Курица</answer>
+        <answer>Бобы</answer>
+        </answers>
+    </question>
+</questions>
