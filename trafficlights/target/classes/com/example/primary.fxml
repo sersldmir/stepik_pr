@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Arc?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.shape.Rectangle?>
+
+<VBox alignment="CENTER" prefHeight="705.0" prefWidth="461.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.PrimaryController">
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+   <children>
+      <Pane prefHeight="683.0" prefWidth="434.0">
+         <children>
+            <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#2a2b2c" height="324.0" layoutX="148.0" layoutY="135.0" stroke="BLACK" strokeType="INSIDE" width="114.0" />
+            <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#252728" height="64.0" layoutX="182.0" layoutY="468.0" stroke="BLACK" strokeType="INSIDE" width="47.0" />
+            <Arc fill="#2c2d2f" layoutX="207.0" layoutY="119.0" length="270.0" radiusX="11.0" radiusY="43.0" rotate="90.0" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" />
+            <Polygon fill="#121314" layoutX="88.0" layoutY="233.0" points="-11.558774948120117, 0.9052338600158691, 39.32211685180664, 5.68560266494751, 41.2862663269043, -53.655452728271484" rotate="-93.4" stroke="BLACK" strokeType="INSIDE" />
+            <Polygon fill="#2b2b2c" layoutX="92.0" layoutY="307.0" points="-16.348052978515625, 1.9737721681594849, 36.53849411010742, 6.281282901763916, 36.76805114746094, -51.3255729675293" rotate="-92.0" stroke="BLACK" strokeType="INSIDE" />
+            <Polygon fill="#323232" layoutX="86.0" layoutY="385.0" points="-11.558774948120117, 0.9052338600158691, 39.32211685180664, 5.68560266494751, 41.2862663269043, -53.655452728271484" rotate="-92.0" stroke="BLACK" strokeType="INSIDE" />
+            <Polygon fill="#121314" layoutX="290.0" layoutY="233.0" points="-11.558774948120117, 0.9052338600158691, 39.32211685180664, 5.68560266494751, -3.433445930480957, -55.65842819213867" rotate="82.4" stroke="BLACK" strokeType="INSIDE" />
+            <Polygon fill="#202122" layoutX="334.0" layoutY="306.0" points="-56.0, -50.0, -56.0, 7.0, 8.0, -50.0" stroke="BLACK" strokeType="INSIDE" />
+            <Polygon layoutX="340.0" layoutY="365.0" points="-60.0, -26.0, -60.0, 23.0, 0.0, -26.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff341f" layoutX="205.0" layoutY="205.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#efff1f" layoutX="205.0" layoutY="297.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#37ff1f" layoutX="205.0" layoutY="404.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+            <Arc fill="#fefeff" layoutX="205.0" layoutY="367.0" length="200.0" radiusX="31.0" radiusY="10.0" startAngle="-9.2" stroke="BLACK" strokeType="INSIDE" type="CHORD" />
+            <Arc fill="#fefeff" layoutX="205.0" layoutY="260.0" length="200.0" radiusX="31.0" radiusY="10.0" startAngle="-9.2" stroke="BLACK" strokeType="INSIDE" type="CHORD" />
+            <Arc fill="#fefeff" layoutX="204.0" layoutY="170.0" length="200.0" radiusX="31.0" radiusY="10.0" startAngle="-9.2" stroke="BLACK" strokeType="INSIDE" type="CHORD" />
+         </children>
+      </Pane>
+   </children>
+</VBox>
