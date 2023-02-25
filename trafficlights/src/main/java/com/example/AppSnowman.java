@@ -8,16 +8,13 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-/**
- * JavaFX App
- */
-public class App extends Application {
+public class AppSnowman extends Application {
 
     private static Scene scene;
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("primary"), 450, 630);
+        scene = new Scene(loadFXML("secondary"), 700, 750);
         stage.setScene(scene);
         stage.show();
     }
@@ -27,7 +24,7 @@ public class App extends Application {
     }
 
     private static Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(AppTraffic.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();
     }
 
