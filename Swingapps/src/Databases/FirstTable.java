@@ -22,9 +22,20 @@ public class FirstTable {
         st.close();
     }
 
+    public static void InsertDB() throws SQLException {
+        String s1 = "Абиссинская кошка";
+        String s2 = "Австралийский мист";
+        String s3 = "Американская жесткошерстная";
+        st.execute("INSERT OR IGNORE INTO types (type) VALUES ('" + s1 + "')");
+        st.execute("INSERT OR IGNORE INTO types (type) VALUES ('" + s2 + "')");
+        st.execute("INSERT OR IGNORE INTO types (type) VALUES ('" + s3 + "')");
+        System.out.println("Data added");
+    }
+
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         FirstTable.Conn();
         FirstTable.CreateDB();
+        FirstTable.InsertDB();
         FirstTable.CloseDB();
     }
 }
