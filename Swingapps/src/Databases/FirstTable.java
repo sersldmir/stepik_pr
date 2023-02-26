@@ -39,6 +39,10 @@ public class FirstTable {
         System.out.println("Multiple rows added");
     }
 
+    public static void insert(String type) throws SQLException{
+        st.execute("INSERT OR IGNORE INTO types (type) VALUES ('" + type + "')");
+    }
+
     public static void delete_type(int id) throws SQLException{
         st.execute("DELETE FROM types WHERE id = '" + id + "'");
         System.out.println("Data deleted successfully");
@@ -82,6 +86,32 @@ public class FirstTable {
         System.out.println("Second table created");
     }
 
+
+    private static ResultSet getType(String type) throws SQLException {
+        Statement statement = con.createStatement();
+        String query = "SELECT id, type FROM types WHERE " + type;
+        return statement.executeQuery(query);
+    }
+
+    public static void insertCat(String name, String type, int age, Double weight) {
+        try {
+            ResultSet resultSet = getType("type = '" + type + "'");
+            int id;
+            if (resultSet.isBeforeFirst())
+                id = resultSet.getInt("id");
+            else {
+                insert(type);
+                id = getType("type = '" + type + "'").getInt("id");
+            }
+            Statement statement = con.createStatement();
+            statement.execute("INSERT INTO 'cats' ('name','type_id','age','weight') " +
+                    "VALUES ('" + name + "'," + id + "," + age + "," + weight + ")");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         FirstTable.Conn();
         FirstTable.CreateDB();
@@ -104,6 +134,10 @@ public class FirstTable {
         // FirstTable.get_type(5);
         // FirstTable.get_type_where("'С%'");
         FirstTable.createSecondTable();
+        FirstTable.insertCat("Bib", "fox", 3, 4.3);
+        System.out.println("Inserted non-existent type");
+        FirstTable.insertCat("Bob", "Тойгер", 5, 5.3);
+        System.out.println("Inserted existent type");
         FirstTable.CloseDB();
     }
 }
