@@ -1,0 +1,12 @@
+CREATE TABLE books ( 
+id INT AUTO_INCREMENT PRIMARY KEY, 
+title VARCHAR(255) NOT NULL, 
+year INT NOT NULL, 
+author VARCHAR(255) NOT NULL 
+);
+
+INSERT INTO books (id, title, year, author) VALUES 
+(1, 'The Catcher in the Rye', 1951, 'J.D. Salinger'), 
+(2, 'To Kill a Mockingbird', 1960, 'Harper Lee'), 
+(3, 'The Great Gatsby', 1925, 'F. Scott Fitzgerald'), 
+(4, 'The Lord of the Rings', 1954, 'J.R.R. Tolkien');
