@@ -39,6 +39,16 @@ public class FirstTable {
         System.out.println("Multiple rows added");
     }
 
+    public static void delete_type(int id) throws SQLException{
+        st.execute("DELETE FROM types WHERE id = '" + id + "'");
+        System.out.println("Data deleted successfully");
+    }
+
+    public static void update_type(int id, String type) throws SQLException{
+        st.execute("UPDATE types SET type ='" + type + "' WHERE id = " + id);
+        System.out.println("Update successful");
+    }
+
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         FirstTable.Conn();
         FirstTable.CreateDB();
@@ -55,6 +65,8 @@ public class FirstTable {
 "Турецкий ван","Украинский левкой","Чаузи","Шартрез","Экзотическая короткошерстная","Японский бобтейл"};
 
         FirstTable.arr_insert(types);
+        FirstTable.delete_type(1);
+        FirstTable.update_type(2, "Cutie");
         FirstTable.CloseDB();
     }
 }
