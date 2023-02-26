@@ -138,6 +138,21 @@ public class FirstTable {
         System.out.println(n + " cats were added");
     }
 
+    static void deleteCat(int id) throws SQLException {
+        st.execute("DELETE FROM cats WHERE id = " + id);
+        System.out.println("The cat with number " + id + " was deleted\n");
+    }
+    
+    static void deleteCatWhere(String where) throws SQLException {
+        st.execute("DELETE FROM cats WHERE " + where);
+        System.out.println("All cats suitable for the condition '" + where + "' were deleted\n");
+    }
+    
+    static void updateCat(int id, String set) throws SQLException {
+        st.execute("UPDATE cats SET " + set + "WHERE id = " + id);
+        System.out.println("The cat with number " + id + " was changed according to the criteria\n");
+    }
+
 
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         FirstTable.Conn();
@@ -154,7 +169,10 @@ public class FirstTable {
         // System.out.println("Inserted non-existent type");
         // FirstTable.insertCat("Bob", "Тойгер", 5, 5.3);
         // System.out.println("Inserted existent type");
-        FirstTable.addMoreCats(3);
+        // FirstTable.addMoreCats(3);
+        FirstTable.deleteCat(7);
+        FirstTable.deleteCatWhere("name = 'Bob'");
+        FirstTable.updateCat(8, "name = 'bol'");
         FirstTable.CloseDB();
     }
 }
