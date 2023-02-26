@@ -152,6 +152,37 @@ public class FirstTable {
         st.execute("UPDATE cats SET " + set + "WHERE id = " + id);
         System.out.println("The cat with number " + id + " was changed according to the criteria\n");
     }
+    
+    static String getCat(int id) {
+        try {
+            return st.executeQuery("SELECT name FROM cats WHERE id = " + id).getString("name") + "\n";
+        } catch (SQLException e) {
+            return "does not exist\n";
+        }
+    }
+
+    static void printCatWhere(String where) throws SQLException {
+        System.out.println("All the cats suitable for the condition '" + where + "':");
+        ResultSet resultSet = st.executeQuery("SELECT * FROM cats WHERE " + where);
+        while (resultSet.next()) {
+            int id = resultSet.getInt("id");
+            String name = resultSet.getString("name");
+            System.out.println(id + " - " + name);
+        }
+        resultSet.close();
+        System.out.println();
+    }
+
+    static void printAllCats() throws SQLException {
+        System.out.println("All cats:");
+        ResultSet resultSet = st.executeQuery("SELECT * FROM cats");
+        while (resultSet.next()) {
+            int id = resultSet.getInt("id");
+            String name = resultSet.getString("name");
+            System.out.println(id + " - " + name);
+        }
+        System.out.println();
+    }
 
 
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
@@ -170,9 +201,12 @@ public class FirstTable {
         // FirstTable.insertCat("Bob", "Тойгер", 5, 5.3);
         // System.out.println("Inserted existent type");
         // FirstTable.addMoreCats(3);
-        FirstTable.deleteCat(7);
-        FirstTable.deleteCatWhere("name = 'Bob'");
-        FirstTable.updateCat(8, "name = 'bol'");
+        // FirstTable.deleteCat(7);
+        // FirstTable.deleteCatWhere("name = 'Bob'");
+        // FirstTable.updateCat(8, "name = 'bol'");
+        FirstTable.printAllCats();
+        FirstTable.printCatWhere("cats.id = 10");
+        FirstTable.getCat(9);
         FirstTable.CloseDB();
     }
 }
