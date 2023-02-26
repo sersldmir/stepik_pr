@@ -1,0 +1,5 @@
+Insert into genres (id, genre) VALUES
+(6, 'Fantasy')
+
+INSERT INTO books (id, title, year, author) VALUES 
+(5, 'Сrime and punishment', 1866, 'F.M.Dostoevskiy');
