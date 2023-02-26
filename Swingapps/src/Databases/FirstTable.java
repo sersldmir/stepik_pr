@@ -74,6 +74,14 @@ public class FirstTable {
         }
     }
 
+    public static void createSecondTable() throws SQLException{
+        st.execute("CREATE TABLE if not exists cats (" +
+            "id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR(100) NOT NULL," + 
+            "type_id INTEGER NOT NULL, age INTEGER NOT NULL, weight DOUBLE," + 
+            "FOREIGN KEY(type_id) REFERENCES types(id))");
+        System.out.println("Second table created");
+    }
+
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         FirstTable.Conn();
         FirstTable.CreateDB();
@@ -92,9 +100,10 @@ public class FirstTable {
         FirstTable.arr_insert(types);
         FirstTable.delete_type(1);
         FirstTable.update_type(2, "Cutie");
-        FirstTable.get_all_types();
-        FirstTable.get_type(5);
-        FirstTable.get_type_where("'С%'");
+        // FirstTable.get_all_types();
+        // FirstTable.get_type(5);
+        // FirstTable.get_type_where("'С%'");
+        FirstTable.createSecondTable();
         FirstTable.CloseDB();
     }
 }
