@@ -1,0 +1,4 @@
+INSERT INTO genres (id, genre) VALUES 
+(7, 'Fiction')
+
+delete from genres where id = 7
