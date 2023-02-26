@@ -49,6 +49,31 @@ public class FirstTable {
         System.out.println("Update successful");
     }
 
+    public static void get_type(int id) throws SQLException{
+        ResultSet res = st.executeQuery("SELECT * FROM types WHERE id = " + id);
+        while (res.next()){
+            System.out.println("Type: " + res.getString("type"));
+            System.out.println();
+        } 
+    }
+
+
+    public static void get_type_where(String condtion) throws SQLException{
+        ResultSet res = st.executeQuery("SELECT * FROM types WHERE type LIKE " + condtion);
+        while (res.next()){
+            System.out.println("Type: " + res.getString("type"));
+            System.out.println();
+        }
+    }
+
+    public static void get_all_types() throws SQLException{
+        ResultSet res = st.executeQuery("SELECT * FROM types");
+        while (res.next()){
+            System.out.println("Type: " + res.getString("type"));
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         FirstTable.Conn();
         FirstTable.CreateDB();
@@ -67,6 +92,9 @@ public class FirstTable {
         FirstTable.arr_insert(types);
         FirstTable.delete_type(1);
         FirstTable.update_type(2, "Cutie");
+        FirstTable.get_all_types();
+        FirstTable.get_type(5);
+        FirstTable.get_type_where("'С%'");
         FirstTable.CloseDB();
     }
 }
