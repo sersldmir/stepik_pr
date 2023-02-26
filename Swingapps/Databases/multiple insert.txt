@@ -1,0 +1,5 @@
+INSERT INTO books (id, title, year, author) VALUES 
+(6, 'The Catcher in the Rye', 1951, 'J.D. Salinger'), 
+(7, 'To Kill a Mockingbird', 1960, 'Harper Lee'), 
+(8, 'The Great Gatsby', 1925, 'F. Scott Fitzgerald'), 
+(9, 'The Lord of the Rings', 1954, 'J.R.R. Tolkien')
